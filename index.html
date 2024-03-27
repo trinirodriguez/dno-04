@@ -51,7 +51,13 @@
         </tr>
         <tr>
         	<td>2022 </td><td id="veintidos"> </td>
-        </tr>    
+        </tr>  
+        </table> 
+
+        <h2 class="my-5">Total por Profes</h2>
+
+                    <address></address>
+
                 </div>
             </div>
         </div>   
@@ -81,6 +87,11 @@
 
 
         	var datos;
+        	var profes = [];
+            var profesOK = [];
+            const olimpo = document.querySelector("address");
+
+
             Papa.parse("https://raw.githubusercontent.com/profesorfaco/dno097-2024/main/clase-04/sietes.csv", {
                 download: true,
                 header: true,
@@ -131,11 +142,29 @@
                        	 }
 
 
+                    profes.push(x.tutor);
                 });
+
+       
+                    console.log(profes);
+
+                    profesOK = [...new Set(profes)];
+
+                    profesOK.sort();
+
+                    console.log(profesOK);
+                    var aguila = 0;
+                    datos.forEach(x=>) {
+                    }
+                    
+
+                    olimpo.innerHTML = "Acá irían los profes… ";
+
+                
 
                },
             });
         </script>
-        
+
     </body>
 </html>
