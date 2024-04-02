@@ -82,7 +82,7 @@
         	const veintiuno = document.querySelector ("#veintiuno");
         	const veintidos = document.querySelector ("#veintidos");
 
-
+const picto = "◯";
 
 
 
@@ -100,63 +100,44 @@
                     console.log(results);
                     datos = results.data;
                     console.log(datos);
-                    datos.forEach(x => {
-                       if(x.year== 2010) {
-                       	diez.innerHTML += "◯ "
+                    datos.forEach((x) => {
+                        if (x.year == 2010) {
+                            diez.innerHTML += picto;
+                        } else if (x.year == 2011) {
+                            once.innerHTML += picto;
+                        } else if (x.year == 2012) {
+                            doce.innerHTML += picto;
+                        } else if (x.year == 2013) {
+                            trece.innerHTML += picto;
+                        } else if (x.year == 2014) {
+                            catorce.innerHTML += picto;
+                        } else if (x.year == 2015) {
+                            quince.innerHTML += picto;
+                        } else if (x.year == 2016) {
+                            dieciseis.innerHTML += picto;
+                        } else if (x.year == 2017) {
+                            diecisiete.innerHTML += picto;
+                        } else if (x.year == 2018) {
+                            dieciocho.innerHTML += picto;
+                        } else if (x.year == 2019) {
+                            diecinueve.innerHTML += picto;
+                        } else if (x.year == 2020) {
+                            veinte.innerHTML += picto;
+                        } else if (x.year == 2021) {
+                            veintiuno.innerHTML += picto;
+                        } else {
+                            veintidos.innerHTML += picto;
+                        }
 
-                       } else if (x.year ==2011){
-                       	once.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2012){
-                       	doce.innerHTML += "◯ "
-                      
-                       }else if (x.year ==2013){
-                       	trece.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2014){
-                       	catorce.innerHTML += "◯ "                      	
-                       
-                       }else if (x.year ==2015){
-                       	quince.innerHTML += "◯ "                       	
-                       
-                       }else if (x.year ==2016){
-                       	dieciseis.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2017){
-                       	diecisiete.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2018){
-                       	dieciocho.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2019){
-                       	diecinueve.innerHTML += "◯ "
-                       
-                       }else if (x.year ==2020){
-                       	veinte.innerHTML += "◯ "
-                      
-                      }else if (x.year ==2021){
-                       	veintiuno.innerHTML += "◯ "
-                      
-                      }else if (x.year ==2022){
-                       	veintidos.innerHTML += "◯ "
-                       	 }
+                        profes.push(x.tutor);
+                    });
 
-
-                    profes.push(x.tutor);
-                });
-
-       
                     console.log(profes);
 
                     profesOK = [...new Set(profes)];
 
                     profesOK.sort();
-
                     console.log(profesOK);
-                    var aguila = 0;
-                    datos.forEach(x=>) {
-                    }
-                    
 
                     olimpo.innerHTML = "Acá irían los profes… ";
 
