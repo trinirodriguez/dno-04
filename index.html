@@ -57,10 +57,10 @@
         <h2 class="my-5">Total por Profes</h2>
         <table class= "table">
         <tr>
-            <td>GONZÁLEZ, A</td><td id="GONZÁLEZ"></td>
+            <td>GONZÁLEZ, A.</td><td id="GONZÁLEZ"></td>
         </tr>
         <tr>
-            <td>MORENO, P</td><td id="MORENO"> </td>
+            <td>MORENO, P.</td><td id="MORENO"> </td>
         </tr>
         <tr>
             <td>HERMANSEN, P.</td><td id="HERMANSEN"> </td>
@@ -69,7 +69,7 @@
             <td>ARIAS, R.</td><td id="ARIAS"> </td>
         </tr>
         <tr>
-            <td>ALVAREZ, P</td><td id="ALVAREZ"> </td>
+            <td>ALVAREZ, P.</td><td id="ALVAREZ"> </td>
         </tr>
         <tr>
             <td>ALFARO, E.</td><td id="ALFARO"> </td>
@@ -245,17 +245,18 @@ const picto = "◯";
                             veintidos.innerHTML += picto;
                         }
 
-                        profes.push(x.tutor);
+                        let profesor = {"name": x.tutor,"sietes":1};
+                      var existe = false;
+                      profes.forEach(profeLeido => {
+                        if(profeLeido.name == x.tutor){
+                          profeLeido.sietes += 1;
+                          existe = true;
+                        }
+                      });
+                      if(existe == false){
+                        profes.push(profesor);
+                    }
                     });
-
-                    console.log(profes);
-
-                    profesOK = [...new Set(profes)];
-
-                    profesOK.sort();
-                    console.log(profesOK);
-
-                    olimpo.innerHTML = "Acá irían los profes… ";
 
                 
 
@@ -264,11 +265,18 @@ const picto = "◯";
         </script>
 
         <script>
+            console.log(profes);
+
+                    profesOK = [...new Set(profes)];
+
+                    profesOK.sort();
+                    console.log(profesOK);
+
             const gonzalez = document.querySelector ("#gonzalez"); 
             const moreno = document.querySelector ("#moreno");
             const hermansen = document.querySelector ("#hermanssen");
             const arias = document.querySelector ("#arias");
-            const alvarez = document.querySelector ("#ALVAREZ");
+            const alvarez = document.querySelector ("#alvarez");
             const alfaro = document.querySelector ("#alfaro");
             const ubilla = document.querySelector ("#ubilla");
             const cancino = document.querySelector ("#cancino");
@@ -303,11 +311,7 @@ const picto = "◯";
             const monroy = document.querySelector ("#monroy");
             const figueroa = document.querySelector ("#figueroa");
 
-            var datos;
-            var profes = [];
-            var profesOK = [];
-            const olimpo = document.querySelector("address");
-
+           
 
             Papa.parse("https://raw.githubusercontent.com/profesorfaco/dno097-2024/main/clase-04/sietes.csv", {
                 download: true,
@@ -315,27 +319,27 @@ const picto = "◯";
                 dynamicTyping: true,
                 complete: function (results) {
                     console.log(results);
-                    profes = results.data;
+                    datos = results.data;
                     console.log(datos);
                 
                     datos.forEach((x) => {
 
-                        if (x.tutor == ALVAREZ,P) {
-                        alvarez.innerHTML += "◯";
-                        } else if (x.tutor == 2011) {
+                        if (x.tutor == "GONZÁLEZ, A.") {
+                        gonzalez.innerHTML += "◯";
+                        } else if (x.tutor == ) {
                             once.innerHTML += "◯";
-                        } else if (x.tutor == 2012) {
-                            doce.innerHTML += picto;
-                        } else if (x.tutor == 2013) {
-                            trece.innerHTML += picto;
-                        } else if (x.tutor == 2014) {
-                            catorce.innerHTML += picto;
-                        } else if (x.tutor == 2015) {
-                            quince.innerHTML += picto;
-                        } else if (x.tutor == 2016) {
-                            dieciseis.innerHTML += picto;
-                        } else if (x.tutor == 2017) {
-                            diecisiete.innerHTML += picto;
+                        } else if (x.tutor == ) {
+                            doce.innerHTML += ;
+                        } else if (x.tutor == ) {
+                            trece.innerHTML += ;
+                        } else if (x.tutor == ) {
+                            catorce.innerHTML += ;
+                        } else if (x.tutor == ) {
+                            quince.innerHTML += ;
+                        } else if (x.tutor == ) {
+                            dieciseis.innerHTML += ;
+                        } else if (x.tutor == ) {
+                            diecisiete.innerHTML += ;
                         } else if (x.tutor == 2018) {
                             dieciocho.innerHTML += picto;
                         } else if (x.tutor == 2019) {
